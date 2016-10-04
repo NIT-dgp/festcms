@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	<meta name="description" content="ANK 2016 - The Knowledge Fest by National Institute Of Technology Durgapur Maths N Tech Club">
+	<meta name="keywords" content="MNTC,Ank 2K16" /> 
+	<meta name="author" content="Maths n Tech Club"> 
+	<title>ANK 2016! #LetTheFunBegin </title>	
+	
+	<!-- SOCIAL MEDIA META -->
+	<meta property="og:title" content="ANK 2016 | The Knowledge Fest"/>
+	<meta property="og:url" content="http://ank.mntc.in" />
+	<meta property="og:type" content="website" />
+	<meta property="og:description" content="MNTC NIT Durgapur presents ANK 2016 | The Knowledge Fest" />
+	
+	{% load staticfiles %}
+	<!-- STYLE SHEETS-->
+	<link rel="stylesheet" type="text/css" href="{% static "css/normalize.css" %}" />
+	<link rel="stylesheet" type="text/css" href="{% static "css/demo.css" %}" />
+	<link rel="stylesheet" type="text/css" href="{% static "fonts/font-awesome-4.2.0/css/font-awesome.min.css" %}" />
+	<link rel="stylesheet" type="text/css" href="{% static "css/menu_cornerbox.css" %}" />
+	<link href= "{% static "css/about.css" %}" rel="stylesheet">
+	<link rel="shortcut icon" href="{% static "images/ico/favicon.png" %}">  
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script><!-- WOW.JS -->
+	<script>
+		new WOW().init();
+	</script>
+</head>
+
+<body>
+	<div class="container" style="background:#b4bad2;">
+		<div class="menu-wrap">
+			<nav class="menu">
+				<div class="profile"><img src="{% static "images/ico/favicon.png" %}" alt="Ank 2016"/><span>ANK 2K16</span></div>
+				<div class="icon-list">
+					<a href="/"><i class="fa fa-fw fa-star-o"></i><span>Home</span></a>
+					<a href="/events"><i class="fa fa-fw fa-bell-o"></i><span>Events</span></a>
+					<a href="/sponsors"><i class="fa fa-fw fa-envelope-o"></i><span>Sponsors</span></a>
+					<a href="/contact"><i class="fa fa-fw fa-comment-o"></i><span>Contact Us</span></a>
+				</div>
+			</nav>
+			<button class="close-button" id="close-button">Close Menu</button>
+		</div>
+		<button class="menu-button" id="open-button">Open Menu</button>
+		<div class="content-wrap">
+			<div class="content">
+				<div class="row">
+					<div class="text-center">
+						<!--<div class="col-sm-8 col-sm-offset-2">-->
+						<h1>About ANK</h1>
+						<div class="row">
+							<div class="col-sm-6">
+								<img src="{% static "images/aboutank1.jpg" %}" id="image" class="img-responsive" alt="ank-img">
+							</div>
+							<div class="col-sm-6" >
+								<p id="about"> Started in the year 2004, Maths and Tech club was initially conceived with the concept of creating  platform to engender in students fervor for the mathematics by emphasizing its benefits and the want for logic through through a multitude of intriguing challenges.<br/><br/>
+									Due to the uniqueness of our area of emphasis and the unending support of our faculty, Maths N Tech club conquers great heights with every passing year,as is evident from the grand success of ANK  2015. The aim is to imbue some gaiety in our intensely banal odd-semester,where students can enhance their aptitude, quench thier knowledge of thirst, and have a jovial time.<br/>
+									ANK is conceptuated to take these things into consideration.Coming up with  plethora of events like Simplex,Kryptic,Constructo,Clash of titans,Terrorist takedown etc,this fest guarantees to elevate student  aptitude to a new zenith of logic and free-thinking.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!-- /content-wrap -->
+	</div><!-- /container -->
+	<script src="{% static "js/classie.js" %}"></script>
+	<script src="{% static "js/main.js" %}"></script>
+</body>
+</html>
