@@ -27,6 +27,19 @@
   		<![endif]-->
   	</head>
   	<body>
+  <div class="preloader">
+    <div class="preloder-wrap">
+      <div class="preloder-inner"> 
+        <div class="ball"></div> 
+        <div class="ball"></div> 
+        <div class="ball"></div> 
+        <div class="ball"></div> 
+        <div class="ball"></div> 
+        <div class="ball"></div> 
+        <div class="ball"></div>
+      </div>
+    </div>
+  </div><!--/.preloader-->
   		<div class="container">
   			<!-- Top Navigation -->
   			<header class="codrops-header">
@@ -35,50 +48,53 @@
   			<section id="grid" class="grid clearfix">
   				{% for event in all_events %}
           <a href="{{ event.get_absolute_url }}" data-path-hover="M 0,0 0,38 90,58 180.5,38 180,0 z">
-  					<figure>
-              {% if event.logo %}
-                <img src="{{ event.logo.url }}" alt= {{ event.name }}>
-              {% else %}
-                <img src="{% static "img/1.png" %}" />
-              {% endif %}
-  						<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 0 0 L 0 182 L 90 126.5 L 180 182 L 180 0 L 0 0 z "/></svg>
-  						<figcaption>
-  							<h2>{{ event.name }}</h2>
-  							<p>{{ event.description }}</p>
-  							<button>View</button>
-  						</figcaption>
-  					</figure>
-  				</a>
-          {% endfor %}
-  			</section>
-  		</div><!-- /container -->
-  		<script>
-  			(function() {
-  				
-  				function init() {
-  					var speed = 300,
-  					easing = mina.backout;
+           <figure>
+            {% if event.logo %}
+            <img src="{{ event.logo.url }}" alt= {{ event.name }}>
+            {% else %}
+            <img src="{% static "img/1.png" %}" />
+            {% endif %}
+            <svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 0 0 L 0 182 L 90 126.5 L 180 182 L 180 0 L 0 0 z "/></svg>
+            <figcaption>
+             <h2>{{ event.name }}</h2>
+             <p>{{ event.description }}</p>
+             <button>View</button>
+           </figcaption>
+         </figure>
+       </a>
+       {% endfor %}
+     </section>
+   </div><!-- /container -->
+   <script>
+     (function() {
 
-  					[].slice.call ( document.querySelectorAll( '#grid > a' ) ).forEach( function( el ) {
-  						var s = Snap( el.querySelector( 'svg' ) ), path = s.select( 'path' ),
-  						pathConfig = {
-  							from : path.attr( 'd' ),
-  							to : el.getAttribute( 'data-path-hover' )
-  						};
+      function init() {
+       var speed = 300,
+       easing = mina.backout;
 
-  						el.addEventListener( 'mouseenter', function() {
-  							path.animate( { 'path' : pathConfig.to }, speed, easing );
-  						} );
+       [].slice.call ( document.querySelectorAll( '#grid > a' ) ).forEach( function( el ) {
+        var s = Snap( el.querySelector( 'svg' ) ), path = s.select( 'path' ),
+        pathConfig = {
+         from : path.attr( 'd' ),
+         to : el.getAttribute( 'data-path-hover' )
+       };
 
-  						el.addEventListener( 'mouseleave', function() {
-  							path.animate( { 'path' : pathConfig.from }, speed, easing );
-  						} );
-  					} );
-  				}
+       el.addEventListener( 'mouseenter', function() {
+         path.animate( { 'path' : pathConfig.to }, speed, easing );
+       } );
 
-  				init();
+       el.addEventListener( 'mouseleave', function() {
+         path.animate( { 'path' : pathConfig.from }, speed, easing );
+       } );
+     } );
+     }
 
-  			})();
-  		</script>
-  	</body>
-  	</html>
+     init();
+
+   })();
+ </script>
+ <script type="text/javascript" src="{% static "js/jquery.js" %}"></script> 
+ <script type="text/javascript" src="{% static "js/bootstrap.min.js" %}" ></script>
+ <script src="{% static "js/preloader.js" %}" ></script>
+</body>
+</html>

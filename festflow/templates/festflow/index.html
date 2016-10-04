@@ -22,6 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="{% static "css/componentstack.css" %}" />
 
 	<link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+	<link href="{% static "css/main.css" %}" rel="stylesheet">
 	<link href="{% static "css/normalize.css" %}" rel="stylesheet">
 	<link href= "{% static "css/component.css" %}" rel="stylesheet"><!--CSS for effect home-->
 	<link href= "{% static "css/index.css" %}" rel="stylesheet">
@@ -41,6 +42,19 @@
 </head>
 
 <body style="background: #1d1e21;">
+<div class="preloader">
+		<div class="preloder-wrap">
+			<div class="preloder-inner"> 
+				<div class="ball"></div> 
+				<div class="ball"></div> 
+				<div class="ball"></div> 
+				<div class="ball"></div> 
+				<div class="ball"></div> 
+				<div class="ball"></div> 
+				<div class="ball"></div>
+			</div>
+		</div>
+	</div><!--/.preloader-->
 	<!-- navigation -->
 	<nav class="pages-nav">
 		<div class="pages-nav__item"><a class="link link--page" href="#page-home">Home</a></div>
@@ -271,6 +285,7 @@
 	<script src="{% static "js/main.js" %}" ></script>
 	<script type="text/javascript" src="{% static "js/jquery.js" %}"></script> 
 	<script type="text/javascript" src="{% static "js/bootstrap.min.js" %}" ></script>
+	<script src="{% static "js/preloader.js" %}" ></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.4/SmoothScroll.js"></script>
 
 	<script>
