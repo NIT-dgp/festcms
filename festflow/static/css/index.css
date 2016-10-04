@@ -1,11 +1,11 @@
 @keyframes glow_button {
-	0%   {	background: rgba(255,255,255, 0.1);
+	0%   {	background: rgba(50,144,148, 0.2);
 		border:  2px solid rgba(255,255,255, 0.3);
 	}
-	50%  {	background: rgba(255,255,255, 0.2);
+	50%  {	background: rgba(50,144,148, 0.4);
 		border:  2px solid rgba(255,255,255, 0.5);
 	}
-	100% {	background: rgba(255,255,255, 0.1);
+	100% {	background: rgba(50,144,148, 0.2);
 		border:  2px solid rgba(255,255,255, 0.3);
 	}
 }
@@ -23,21 +23,25 @@
 }
 
 #register-button {
-	background: rgba(255,255,255, 0.1);
+	background: rgba(50,144,148, 0.1);
 	border:  2px solid rgba(255,255,255, 0.3);
+	border-radius: 50%;
 	display: block;
 	margin: 0 auto;
 	font-size: 1.4em;
 	padding: 0.4em 1.2em;
 	animation-name: glow_button;
 	animation-duration: 6s;
+	color:#fff;
 	animation-iteration-count: infinite;
-
 	transition: all 0.5s;
 }
 #register-button:hover {
 	background: rgba(255,255,255, 0.2);
 	border:  2px solid rgba(255,255,255, 0.6);
+	transition: all 0.5s;
+	cursor:pointer;
+	transform:scale(1.1);
 	transition: all 0.5s;
 }
 
