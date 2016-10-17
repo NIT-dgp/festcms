@@ -1,85 +1,50 @@
-jQuery(function($) {'use strict',
+/**
+ * main.js
+ * http://www.codrops.com
+ *
+ * Licensed under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ * 
+ * Copyright 2014, Codrops
+ * http://www.codrops.com
+ */
+(function() {
 
+	var bodyEl = document.body,
+		content = document.querySelector( '.content-wrap' ),
+		openbtn = document.getElementById( 'open-button' ),
+		closebtn = document.getElementById( 'close-button' ),
+		isOpen = false;
 
-	// Navigation Scroll
-	$(window).scroll(function(event) {
-		Scroll();
-	});
+	function init() {
+		initEvents();
+	}
 
-	$('.navbar-collapse ul li a').click(function() {  
-		$('html, body').animate({scrollTop: $(this.hash).offset().top - 79}, 1000);
-		return false;
-	});
+	function initEvents() {
+		openbtn.addEventListener( 'click', toggleMenu );
+		if( closebtn ) {
+			closebtn.addEventListener( 'click', toggleMenu );
+		}
 
-});
+		// close the menu element if the target it´s not the menu element or one of its descendants..
+		content.addEventListener( 'click', function(ev) {
+			var target = ev.target;
+			if( isOpen && target !== openbtn ) {
+				toggleMenu();
+			}
+		} );
+	}
 
-// Preloder script
-jQuery(window).load(function(){'use strict';
-	$(".preloader").delay(1600).fadeOut("slow").remove();
-});
+	function toggleMenu() {
+		if( isOpen ) {
+			classie.remove( bodyEl, 'show-menu' );
+		}
+		else {
+			classie.add( bodyEl, 'show-menu' );
+		}
+		isOpen = !isOpen;
+	}
 
-//Preloder script
-jQuery(window).load(function(){'use strict';
+	init();
 
-	// Slider Height
-	var slideHeight = $(window).height();
-	$('#home .carousel-inner .item, #home .video-container').css('height',slideHeight);
-
-	$(window).resize(function(){'use strict',
-		$('#home .carousel-inner .item, #home .video-container').css('height',slideHeight);
-	});
-
-});
-
-
-// User define function
- function Scroll() {
-	// var contentTop      =   [];
-	// var contentBottom   =   [];
-	// var winTop      =   $(window).scrollTop();
-	// var rangeTop    =   200;
-	// var rangeBottom =   500;
-	// $('.navbar-collapse').find('.scroll a').each(function(){
-		// contentTop.push( $( $(this).attr('href') ).offset().top);
-		// contentBottom.push( $( $(this).attr('href') ).offset().top + $( $(this).attr('href') ).height() );
-	// })
-	// $.each( contentTop, function(i){
-		// if ( winTop > contentTop[i] - rangeTop ){
-			// $('.navbar-collapse li.scroll')
-			// .removeClass('active')
-			// .eq(i).addClass('active');			
-		// }
-	// })
-
- };
-
-	//map api
-	
-	var myCenter=new google.maps.LatLng(23.5509, 87.2904);
-var marker;
-
-function initialize()
-{
-var mapProp = {
-  center:myCenter,
-  zoom:16,
-  mapTypeControl:true,
-mapTypeControlOptions: {
-    style:google.maps.MapTypeControlStyle.DROPDOWN_MENU
-},
-  scrollwheel:false,
-  mapTypeId:google.maps.MapTypeId.HYBRID
-  };
-
-var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
-var marker=new google.maps.Marker({
-  position:myCenter,
-  animation:google.maps.Animation.BOUNCE
-  });
-
-marker.setMap(map);
-}
-
-google.maps.event.addDomListener(window, 'load', initialize);
-
+})();

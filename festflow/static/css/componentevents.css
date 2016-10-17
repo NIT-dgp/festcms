@@ -47,7 +47,7 @@
 	color: #3498db;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	font-weight: 300;
+	font-weight: 900;
 	font-size: 130%;
 	-webkit-transition: -webkit-transform 0.3s;
 	transition: transform 0.3s;
@@ -55,8 +55,8 @@
 
 .grid figcaption p {
 	padding: 0 20px;
-	color: #aaa;
-	font-weight: 300;
+	color: #000;
+	font-weight: 400;
 	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
 	transition: opacity 0.3s, transform 0.3s;
 }
