@@ -17,12 +17,12 @@
   <!-- STYLE SHEETS-->
   <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
   <link href= "{% static "css/nav.css" %}" rel="stylesheet">
-
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
   <link href= "{% static "css/event-view.css" %}" rel="stylesheet">
-
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+  <script>
+    new WOW().init();
   </script>
-
-  
 </head><!-- /head-->
 
 <body>
@@ -54,37 +54,36 @@
   <!-- EVENT VIEW -->
   <section>
     <div id="background-container">
-    <div class="event_container container">
-      <h1>{{ event.name }}</h1>
-      <div class="row">
-       <div class="col-sm-6">
-        {% if event.logo %}
-        <img src="{{ event.logo.url }}" alt="Oops!" width="100%">
-        {% endif %}
-      </div>
-      <div class="col-sm-6 text-center wow fadeIn" data-wow-duration="2s">
-       <h2>About the Event</h2>
-       <p>{{ event.description }}</p>
-       <p><strong>venue</strong>: {{ event.venue }}</p>
-       {% if event.problem_statement_file %}
-       <a href="{{ event.problem_statement_file.url }}"><h3>Download Problem Statement</h3></a>
-       {% endif %}
-       {% if event in user_profile.registered_events.all %}
-       <h3>You have already registered for this event</h3>
-       {% else %}
-       <a href="/register_event/{{ event.identifier }}"><button class="btn btn-lg btn-primary"> Register</button></a>
-       {% endif %}
+      <div class="event_container container">
+        <h1 class="text-center wow fadeIn" data-wow-duration="3s">{{ event.name }}</h1>
+        <div class="row">
+         <div class="col-sm-6 wow hinge" data-wow-duration="2s" data-wow-delay="1s">
+          {% if event.logo %}
+          <img src="{{ event.logo.url }}" alt="Oops!" width="100%">
+          {% endif %}
+        </div>
+        <div class="col-sm-6 text-center wow fadeInLeft" data-wow-duration="2s" data-wow-delay="1s">
+         <h2>About the Event</h2>
+         <p>{{ event.description }}</p>
+         <p><strong>venue</strong>: {{ event.venue }}</p>
+         {% if event.problem_statement_file %}
+         <a href="{{ event.problem_statement_file.url }}"><h3>Download Problem Statement</h3></a>
+         {% endif %}
+         {% if event in user_profile.registered_events.all %}
+         <h3>You have already registered for this event</h3>
+         {% else %}
+         <a href="/register_event/{{ event.identifier }}"><button class="btn btn-lg btn-primary"> Register</button></a>
+         {% endif %}
+       </div>
      </div>
    </div>
-  </div>
-  </div>
-  <section>
+ </div>
+ <section>
 
   <!-- - - - -Default Script files- - - - -->
 
   <script type="text/javascript" src="{% static "js/jquery.js" %}"></script> 
   <script type="text/javascript" src="{% static "js/bootstrap.min.js" %}"></script>
   <script type="text/javascript" src="{% static "js/nav.js" %}"></script>
-
 </body>
 </html>
