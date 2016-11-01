@@ -23,7 +23,7 @@
 
 	<!-- Stylesheet required to power RRSSB. -->
 	<link rel="stylesheet" href="{% static "rrssb-master/css/rrssb.css" %}" />
-
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href= "{% static "css/index.css" %}" rel="stylesheet">
 
 
@@ -57,7 +57,7 @@
 				{% if user.is_authenticated %}
 				<a href="/logout"><li class="nav_list_item">Logout</li></a>
 				{% else %}
-				<a href="/login" ><li class="nav_list_item">Login</li></a>
+				<a href="/login"><li class="nav_list_item">Login</li></a>
 				{% endif %}
 			</ul>
 		</div>
@@ -75,11 +75,11 @@
 					<h4 class="modal-title text-center">Please Login/Register to Continue</h4>
 				</div>
 				<div class="modal-body text-center">
-					<p>{{ profiles_count }} users have already registered!...<span class="register">Register NOW!</span> </p>
+					<p><span class="register">Register NOW!</span> </p>
 				</div>
 				<div class="modal-footer login-button-wrapper">
-					<a href="/login/facebook/?next=/"><button type="button" class="btn btn-lg btn-primary" >Sign in with Facebook</button></a>
-					<a href="/login/google-oauth2/?next=/"><button type="button" class="btn btn-lg btn-danger" >Sign in with Google</button></a>
+					<a href="/login/facebook/?next=/"><button type="button" class="btn btn-primary" >Sign in with <i class="fa fa-facebook fa-lg" aria-hidden="true"></i></button></a>
+					<a href="/login/google-oauth2/?next=/"><button type="button" class="btn btn-danger" >Sign in with <i class="fa fa-google-plus fa-lg" aria-hidden="true"></i></button></a>
 					</div>
 				</div>
 			</div>
