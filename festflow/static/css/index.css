@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Chewy|Baloo+Paaji|Caveat+Brush|');
+
 /* main canvas styles */
 #main-canvas {
 	position: absolute;
@@ -23,7 +25,20 @@
 	background-position: center;
 	background-size: cover;
 }
-
+.modal-title{
+	font-size: 180%;
+	font-family: 'Baloo Paaji'
+}
+.modal-body{
+	font-weight: 500;
+	font-size: 180%;
+	font-family: 'Caveat Brush'
+}
+.register{
+	color: red;
+	text-transform: uppercase;
+	font-family: 'Baloo Paaji'	
+}
 /* main logo styles */
 #large-header {
 	position: relative;
