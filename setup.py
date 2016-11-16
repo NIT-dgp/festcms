@@ -1,10 +1,10 @@
 from setuptools import setup
 
-setup(name='YourAppName',
+setup(name='festcms',
       version='1.0',
-      description='OpenShift App',
-      author='Your Name',
-      author_email='example@example.com',
-      url='http://www.python.org/sigs/distutils-sig/',
+      description='A generic CMS for college fests.',
+      author='Bishakh Ghosh',
+      author_email='ghoshbishakh@gmail.com'
+      url='',
 #      install_requires=['Django>=1.3'],
      )
