@@ -44,7 +44,8 @@ class Event(models.Model):
 
     def get_absolute_url(self):
         return '/events/%s/' % self.identifier
-
+    
+   
 
 class Profile(models.Model):
     "Stores additional information about the user"
@@ -100,3 +101,7 @@ class sponsor(models.Model):
     logo = models.ImageField(upload_to='sponsor_logos/')
 
     rank = models.IntegerField(default=0)
+    
+    def __str__(self):
+        return self.name
+
