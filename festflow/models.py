@@ -100,3 +100,21 @@ class sponsor(models.Model):
     logo = models.ImageField(upload_to='sponsor_logos/')
 
     rank = models.IntegerField(default=0)
+
+
+class About(models.Model):
+    """Stores raw html as data to be displayed in about page
+    """
+
+    #unique identifier
+    identifier = models.CharField(max_length=50, unique=True)
+
+    #content stored as raw html
+    content = models.TextField()
+
+    def __str__(self):
+        return self.content
+
+    class Meta:
+        verbose_name = "about"
+        verbose_name_plural = "about"
