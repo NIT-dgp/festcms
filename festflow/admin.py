@@ -35,6 +35,7 @@ class NewsLetterAdmin(admin.ModelAdmin):
 
 admin.site.register(Profile)
 admin.site.register(Event)
+admin.site.register(Keynote)
 admin.site.register(organizerMember)
 admin.site.register(sponsor)
 admin.site.register(About)
