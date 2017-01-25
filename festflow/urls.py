@@ -17,6 +17,9 @@ urlpatterns = [
 
     # Event Page
     url(r'^events/$', views.events, name='events'),
+    
+    # Keynotes Page
+    url(r'^keynotes/$', views.keynotes, name='keynotes'),
 
     # Reach Us Page
     url(r'^reachus/$', views.reachus, name='reachus'),
@@ -30,6 +33,10 @@ urlpatterns = [
     # Event View Page
     url(r'^events/(?P<event_identifier>[a-z]*)/$', views.event_view,
         name='event_view'),
+        
+    # Keynote View Page
+    url(r'^keynote/(?P<keynote_identifier>[a-z]*)/$', views.keynote_view,
+        name='keynote_view'),
 
     # Event Register Page
     url(r'^register_event/(?P<event_identifier>[a-z]*)/$',

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>KEYNOTE SPEECHES</title>
+</head>
+<body>
+  {% for keynote in all_keynotes %}
+  <a href="{{ keynote.get_absolute_url }}">
+    {% if keynote.logo %}
+    <img src="{{ keynote.logo.url }}" alt= "{{ keynote.name }}" />
+    {% endif %}
+    <h2>{{ keynote.name }}</h2>
+    <button>View</button>
+  </a>
+ {% endfor %}
+</body>
+</html>
