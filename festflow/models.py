@@ -126,7 +126,7 @@ def create_user_profile(sender, instance, created, **kwargs):
         instance.profile.save()
 
 
-class organizerMember(models.Model):
+class OrganizerMember(models.Model):
     """Stores information about the members of the organization
     that is conducting the fest"""
 

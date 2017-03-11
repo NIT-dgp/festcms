@@ -50,7 +50,7 @@ def sponsors(request):
 
 def contact(request):
     context = {}
-    all_contacts = organizerMember.objects.all()
+    all_contacts = OrganizerMember.objects.all()
     context['all_contacts'] = all_contacts
     return render(request, 'festflow/contact.html', context)
 
