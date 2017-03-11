@@ -126,7 +126,7 @@ def create_user_profile(sender, instance, created, **kwargs):
         instance.profile.save()
 
 
-class organizerMember(models.Model):
+class OrganizerMember(models.Model):
     """Stores information about the members of the organization
     that is conducting the fest"""
 
@@ -149,7 +149,7 @@ class organizerMember(models.Model):
         return self.name
 
 
-class sponsor(models.Model):
+class Sponsor(models.Model):
     """Stores information about fest sponsors
     """
     name = models.CharField(max_length=100)
