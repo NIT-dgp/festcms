@@ -1,3 +1,4 @@
+requests==2.12
 coala-bears==0.10
 coverage==4.3.4
 defusedxml==0.5.0
